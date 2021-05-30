@@ -1,79 +1,145 @@
-.container {
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.btn {
-  color: #fff;
-  font-size: 24px;
-  background-color: #da3b4a;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin-top: 200px;
-}
-
-.popover {
-  text-align: left;
+body {
+  background-color: #3a7dd4;
   font-family: Arial, sans-serif;
-  position: absolute;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.container {
   display: flex;
-  flex-direction: column;
-  z-index: 10;
-  max-width: 276px;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.tasks-column {
+  box-sizing: border-box;
+  width: 33%;
+  padding: 10px;
+  margin: 0 4px;
   border-radius: 4px;
+  background-color: #ebecf0;
 }
 
-.popover-title {
-  padding: 16px 16px;
-  margin-top: 0;
-  margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+p {
+  box-sizing: border-box;
+  padding: 8px;
+  margin: 0;
+
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: right bottom;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.popover-body {
-  flex: 1 1 auto;
-  padding: 16px 16px;
+.tasks {
+  min-height: 20px;
 }
 
-.hidden {
+.add-task {
+  padding: 10px;
+  color: #699df7;
+  cursor: pointer;
+}
+
+.task-item {
+  position: relative;
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px outset #ebecf0;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
+}
+
+.dragged {
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.task-item-active {
+  background-color: #ffffff;
+}
+
+.delete-button {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.delete-button-active {
+  display: inline-block;
+}
+
+.task-form {
   display: none;
 }
 
-.fade {
-  opacity: 0;
-  transition: opacity 0.3s linear;
+.task-form-active {
+  display: block;
 }
 
-.show {
-  transition: opacity 0.3s linear;
-  opacity: 1;
+.task-input {
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+  overflow: auto;
+  width: 100%;
+  min-height: 80px;
+  padding: 8px;
+  margin-bottom: 6px;
+  border: 1px outset #ebecf0;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  font-family: inherit;
+  font-size: inherit;
+  color: #5e6c84;
 }
 
-.popover .popover-arrow::before {
-  content: " ";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -10px;
-  border-width: 10px;
-  border-style: solid;
-  border-color: #000 transparent transparent transparent;
+.add-button {
+  width: 100px;
+  height: 35px;
+  padding: 8px;
+  margin: 0;
+  border: none;
+  border-radius: 4px;
+  background-color: #5aac44;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
 }
 
-.popover .popover-arrow::after {
-  content: " ";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -10px;
-  border-width: 10px;
-  border-style: solid;
-  border-color: #fff transparent transparent transparent;
+.cancel-button {
+  width: 20px;
+  height: 20px;
+  padding: 8px;
+  margin: 0 8px;
+  border: none;
+  background-color: transparent;
+
+  background-size: cover;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.button-box {
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: right bottom;
 }
