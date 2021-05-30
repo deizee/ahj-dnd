@@ -61,7 +61,10 @@ export default class Trello {
 
     this.container.addEventListener('mouseout', (e) => {
       e.preventDefault();
-      if (e.target.classList.contains('task-item') && !e.relatedTarget.classList.contains('delete-button')) {
+      if (
+        e.target.classList.contains('task-item') &&
+        !e.relatedTarget.classList.contains('delete-button')
+      ) {
         e.target.classList.remove('task-item-active');
         e.target.querySelector('.delete-button').classList.remove('delete-button-active');
       }
@@ -82,7 +85,7 @@ export default class Trello {
       const parentDiv = target.closest('.tasks');
 
       if (parentDiv && parentDiv !== target) {
-        if (e.pageY > window.scrollY + top + (target.offsetHeight / 2)) {
+        if (e.pageY > window.scrollY + top + target.offsetHeight / 2) {
           parentDiv.insertBefore(this.dragTask, target.nextElementSibling);
         } else {
           parentDiv.insertBefore(this.dragTask, target);
